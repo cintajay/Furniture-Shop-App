@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var searchText: String = ""
     var body: some View {
         ZStack {
             Color(.bg).ignoresSafeArea()
             
             VStack(alignment: .leading){
                 AppBarView()
-                TagLineView()
+                TagLineView().padding(.leading)
+                
+                HStack {
+                    HStack {
+                        Image("Search")
+                        TextField("Search Furniture", text: $searchText)
+                    }.padding(.all, 20)
+                        .background(Color(.white))
+                        .cornerRadius(10)
+                        .padding(.trailing)
+                    Image("Scan")
+                        .padding()
+                        .background(Color("Primary"))
+                        .cornerRadius(10)
+                }.padding(.horizontal)
             }
         }
         
