@@ -13,54 +13,52 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color(.bg).ignoresSafeArea()
-            
-            VStack(alignment: .leading){
-                AppBarView()
-                TagLineView().padding(.leading)
-                SearchAndScanView()
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(0..<categories.count) { i in
-                            CategoryView(text: categories[i], isActive: i == selectedIndex)
-                                .onTapGesture {
-                                    selectedIndex = i
-                                }
+            ScrollView() {
+                VStack(alignment: .leading){
+                    AppBarView()
+                    TagLineView().padding(.leading)
+                    SearchAndScanView()
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(0..<categories.count) { i in
+                                CategoryView(text: categories[i], isActive: i == selectedIndex)
+                                    .onTapGesture {
+                                        selectedIndex = i
+                                    }
+                            }
                         }
-                    }
-                }.padding(.all)
-                Text("Popular")
-                    .font(.custom("PlayfairDisplay-Bold", size: 24))
-                    .padding(.horizontal)
-                
-                VStack {
-                    ZStack {
-                        Image("chair_1")
-                            .resizable()
-                            .frame(width: 210, height: 200)
-                            .cornerRadius(20)
-                    }
-                        
-                    Text("Luxury Swedian Chair")
-                        .font(.title3)
-                        .fontWeight(.bold)
+                    }.padding(.all)
+                    Text("Popular")
+                        .font(.custom("PlayfairDisplay-Bold", size: 24))
+                        .padding(.horizontal)
                     
-                    HStack(spacing: 2) {
-                        ForEach(0..<5) { i in
-                            Image("star")
-                        }
-                        Spacer()
-                        Text("$ 12900")
-                            .font(.system(size: 20))
-                            .bold()
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(1..<5) { i in
+                                ProductCardView(image: Image("chair_\(i)"))
+                                    .padding(.trailing)
+                            }
+                            
+                        }.padding(.leading)
                     }
                     
-                }.frame(width: 210)
-                    .padding(.all)
-                    .background(Color(.white))
-                    .cornerRadius(20)
-
-
+                    Text("Best")
+                        .font(.custom("PlayfairDisplay-Bold", size: 24))
+                        .padding(.horizontal)
                     
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(1..<5) { i in
+                                ProductCardView(image: Image("chair_\(i)"))
+                                    .padding(.trailing)
+                            }
+                            
+                        }.padding(.leading)
+                    }
+                    
+                    
+                    
+                }
             }
         }
         
@@ -138,5 +136,37 @@ struct CategoryView: View {
                     .clipShape(Capsule())
             }
         }.padding(.trailing)
+    }
+}
+
+struct ProductCardView: View {
+    let image: Image
+    var body: some View {
+        VStack {
+            ZStack {
+                image
+                    .resizable()
+                    .frame(width: 210, height: 200)
+                    .cornerRadius(20)
+            }
+            
+            Text("Luxury Swedian Chair")
+                .font(.title3)
+                .fontWeight(.bold)
+            
+            HStack(spacing: 2) {
+                ForEach(0..<5) { i in
+                    Image("star")
+                }
+                Spacer()
+                Text("$ 12900")
+                    .font(.system(size: 20))
+                    .bold()
+            }
+            
+        }.frame(width: 210)
+            .padding(.all)
+            .background(Color(.white))
+            .cornerRadius(20)
     }
 }
