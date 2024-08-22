@@ -32,13 +32,12 @@ struct ContentView: View {
                     .font(.custom("PlayfairDisplay-Bold", size: 24))
                     .padding(.horizontal)
                 
-                VStack(alignment: .leading, spacing: 0) {
+                VStack {
                     ZStack {
                         Image("chair_1")
                             .resizable()
                             .frame(width: 210, height: 200)
-                            .cornerRadius(10)
-                            .padding(.all)
+                            .cornerRadius(20)
                     }
                         
                     Text("Luxury Swedian Chair")
@@ -53,12 +52,15 @@ struct ContentView: View {
                         Text("$ 12900")
                             .font(.system(size: 20))
                             .bold()
-                    }.padding()
+                    }
                     
-                }.background(Color(.white))
-                    .frame(width: 240)
-                    .cornerRadius(10)
-                    .padding(.leading)
+                }.frame(width: 210)
+                    .padding(.all)
+                    .background(Color(.white))
+                    .cornerRadius(20)
+
+
+                    
             }
         }
         
