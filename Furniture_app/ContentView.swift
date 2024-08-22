@@ -18,7 +18,7 @@ struct ContentView: View {
                 AppBarView()
                 TagLineView().padding(.leading)
                 SearchAndScanView()
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(0..<categories.count) { i in
                             CategoryView(text: categories[i], isActive: i == selectedIndex)
@@ -27,7 +27,7 @@ struct ContentView: View {
                                 }
                         }
                     }
-                }
+                }.padding(.all)
                 
             }
         }
@@ -95,16 +95,16 @@ struct CategoryView: View {
     let text: String
     let isActive: Bool
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 0) {
             Text(text)
                 .font(.system(size: 18))
                 .fontWeight(.medium)
-                .foregroundColor(isActive ? Color("Primary") : .black)
+                .foregroundColor(isActive ? Color("Primary") : .black.opacity(0.6))
             if isActive {
                 Color("Primary")
                     .frame(width: 15, height: 2)
                     .clipShape(Capsule())
             }
-        }
+        }.padding(.trailing)
     }
 }
