@@ -28,7 +28,37 @@ struct ContentView: View {
                         }
                     }
                 }.padding(.all)
+                Text("Popular")
+                    .font(.custom("PlayfairDisplay-Bold", size: 24))
+                    .padding(.horizontal)
                 
+                VStack(alignment: .leading, spacing: 0) {
+                    ZStack {
+                        Image("chair_1")
+                            .resizable()
+                            .frame(width: 210, height: 200)
+                            .cornerRadius(10)
+                            .padding(.all)
+                    }
+                        
+                    Text("Luxury Swedian Chair")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                    
+                    HStack(spacing: 2) {
+                        ForEach(0..<5) { i in
+                            Image("star")
+                        }
+                        Spacer()
+                        Text("$ 12900")
+                            .font(.system(size: 20))
+                            .bold()
+                    }.padding()
+                    
+                }.background(Color(.white))
+                    .frame(width: 240)
+                    .cornerRadius(10)
+                    .padding(.leading)
             }
         }
         
