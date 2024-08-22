@@ -60,6 +60,16 @@ struct ContentView: View {
                     
                 }
             }
+            HStack {
+                ForEach(0..<4) { i in
+                    TabBarItem(image: "Home")
+                }
+            }.padding()
+            .background(Color.white)
+            .clipShape(.capsule)
+            .padding()
+            .shadow(radius: 10)
+            .frame(maxHeight: .infinity, alignment: .bottom)
         }
         
     }
@@ -169,5 +179,14 @@ struct ProductCardView: View {
             .padding(.all)
             .background(Color(.white))
             .cornerRadius(20)
+    }
+}
+
+struct TabBarItem: View {
+    let image: String
+    var body: some View {
+        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Image(image)
+        }).frame(maxWidth: .infinity)
     }
 }
