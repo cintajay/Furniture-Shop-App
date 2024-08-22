@@ -35,7 +35,7 @@ struct ContentView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(1..<5) { i in
-                                ProductCardView(image: Image("chair_\(i)"))
+                                ProductCardView(width: 210, image: Image("chair_\(i)"))
                                     .padding(.trailing)
                             }
                             
@@ -49,7 +49,7 @@ struct ContentView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(1..<5) { i in
-                                ProductCardView(image: Image("chair_\(i)"))
+                                ProductCardView(width: 180, image: Image("chair_\(i)"))
                                     .padding(.trailing)
                             }
                             
@@ -140,13 +140,14 @@ struct CategoryView: View {
 }
 
 struct ProductCardView: View {
+    let width: CGFloat
     let image: Image
     var body: some View {
         VStack {
             ZStack {
                 image
                     .resizable()
-                    .frame(width: 210, height: 200)
+                    .frame(width: width, height: (20/21)*width)
                     .cornerRadius(20)
             }
             
@@ -164,7 +165,7 @@ struct ProductCardView: View {
                     .bold()
             }
             
-        }.frame(width: 210)
+        }.frame(width: width)
             .padding(.all)
             .background(Color(.white))
             .cornerRadius(20)
