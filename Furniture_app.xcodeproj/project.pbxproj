@@ -17,6 +17,7 @@
 		880473C825D8C1D200F9A279 /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880473C625D8C1D200F9A279 /* PlayfairDisplay-Bold.ttf */; };
 		888C4EAA25DCF46B00F9B6ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 888C4EA925DCF46B00F9B6ED /* README.md */; };
 		888C4EAF25DD03E100F9B6ED /* ui.png in Resources */ = {isa = PBXBuildFile; fileRef = 888C4EAE25DD03E100F9B6ED /* ui.png */; };
+		BBB2A8DF2C784751001D989B /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB2A8DE2C784751001D989B /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		880473C625D8C1D200F9A279 /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		888C4EA925DCF46B00F9B6ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		888C4EAE25DD03E100F9B6ED /* ui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ui.png; sourceTree = "<group>"; };
+		BBB2A8DE2C784751001D989B /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		8804739525D8C14200F9A279 /* Furniture_app */ = {
 			isa = PBXGroup;
 			children = (
+				BBB2A8DD2C78472E001D989B /* Screens */,
 				880473C425D8C19E00F9A279 /* Fonts */,
 				8804739625D8C14200F9A279 /* Furniture_appApp.swift */,
 				8804739825D8C14200F9A279 /* ContentView.swift */,
@@ -148,6 +151,14 @@
 				880473C525D8C1D200F9A279 /* PlayfairDisplay-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BBB2A8DD2C78472E001D989B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BBB2A8DE2C784751001D989B /* HomeScreen.swift */,
+			);
+			name = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 			files = (
 				8804739925D8C14200F9A279 /* ContentView.swift in Sources */,
 				8804739725D8C14200F9A279 /* Furniture_appApp.swift in Sources */,
+				BBB2A8DF2C784751001D989B /* HomeScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
