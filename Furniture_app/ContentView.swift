@@ -14,11 +14,11 @@ struct ContentView: View {
                 .resizable()
                 .frame(height: 400)
             DescriptionView()
-                .cornerRadius(40)
-                .offset(y: -40)
         }.ignoresSafeArea()
     }
 }
+
+//VStack being the outer container stack instead of a ZStack causes design difficulties
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -30,7 +30,7 @@ struct ContentView_Previews: PreviewProvider {
 struct DescriptionView: View {
     var body: some View {
         ZStack(alignment:.top) {
-            Color("Bg")
+            Color("Bg") //only for top and bot parts
             VStack(alignment: .leading, spacing: 15) {
                 Text("Luxury Swedian \nChair")
                     .font(.title)
@@ -53,6 +53,9 @@ struct DescriptionView: View {
                     .opacity(0.6)
             }.padding()
             .padding(.top)
+            .background(Color("Bg"))
+            .cornerRadius(40)
+            .offset(y: -40)
         }
     }
 }
